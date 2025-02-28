@@ -2,6 +2,8 @@
 
 A powerful React component for debugging HTTP requests and terminal logs in development environments. It intercepts fetch requests, allows sending custom requests, streams Vite logs via WebSocket, and provides a detailed breakdown of request/response data with JSON filtering and theme support.
 
+![React Dev Debug Modal Screenshot](./docs/images/debugger-main.png)
+
 ## Features
 
 - **HTTP Request Interception**: Automatically captures all fetch requests made in your app, displaying method, endpoint, status, duration, and more.
@@ -12,6 +14,7 @@ A powerful React component for debugging HTTP requests and terminal logs in deve
 - **Replay Requests**: Re-send captured requests to test endpoints.
 - **Theme Support**: Choose between dark, monokai, and normal themes.
 - **Keyboard Shortcuts**: Quick access with shortcuts like Alt+S (toggle modal), Alt+E (last error), and Escape (close).
+
 
 ## Demo
 
