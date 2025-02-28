@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [react()],
     build: {
         lib: {
-            entry: path.resolve(__dirname, 'src/components/TideDebugModal.jsx'),
+            entry: path.resolve(__dirname, 'src/components/TideDebugModal/TideDebugModal.jsx'),
             name: 'ReactDevDebugModal',
             fileName: (format) => `index.${format === 'es' ? 'esm' : format}.js`,
         },

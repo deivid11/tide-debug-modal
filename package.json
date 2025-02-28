@@ -9,7 +9,8 @@
         "dev": "bunx vite",
         "build": "bunx vite build",
         "preview": "bunx vite preview",
-        "build:lib": "bunx vite build --config vite.lib.config.js"
+        "build:lib": "bunx vite build --config vite.lib.config.mjs",
+        "watch:lib": "bunx vite build --config vite.lib.config.mjs --watch"
     },
     "keywords": ["react", "debug", "http", "terminal", "developer-tools"],
     "author": "TIDE",
