@@ -1,0 +1,1666 @@
+// Dracula Theme Variables (Dark)
+$bg: #282a36;
+$fg: #f8f8f2;
+$purple: #bd93f9;
+$teal: #8be9fd;
+$green: #50fa7b;
+$red: #ff5555;
+$gray: #44475a;
+$highlight: #6272a4;
+$yellow: #ffb86c;
+
+// Monokai Theme Variables
+$monokai-bg: #272822;
+$monokai-fg: #f8f8f2;
+$monokai-purple: #ae81ff;
+$monokai-teal: #66d9ef;
+$monokai-green: #a6e22e;
+$monokai-red: #f92672;
+$monokai-gray: #75715e;
+$monokai-highlight: #49483e;
+$monokai-yellow: #e6db74;
+
+// Normal (Light/White) Theme Variables
+$normal-bg: #ffffff;
+$normal-fg: #333333;
+$normal-purple: #6a5acd;
+$normal-teal: #00ced1;
+$normal-green: #32cd32;
+$normal-red: #dc143c;
+$normal-gray: #d3d3d3;
+$normal-highlight: #e6e6e6;
+$normal-yellow: #ffcc00;
+
+
+.json-filter {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+
+  &::placeholder {
+    color: #888;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #666;
+    background-color: #3a3a3a;
+  }
+}
+
+// Theme-specific adjustments
+.theme-normal {
+  .json-filter {
+    border-color: #ccc;
+    background-color: #fff;
+    color: #000;
+
+    &::placeholder {
+      color: #666;
+    }
+
+    &:focus {
+      border-color: #999;
+      background-color: #f9f9f9;
+    }
+  }
+}
+
+.theme-dark {
+  .json-filter {
+    border-color: #555;
+    background-color: #282a36;
+    color: #f8f8f2;
+
+    &::placeholder {
+      color: #999;
+    }
+
+    &:focus {
+      border-color: #777;
+      background-color: #30323e;
+    }
+  }
+}
+
+.theme-monokai {
+  .json-filter {
+    border-color: #75715e;
+    background-color: #272822;
+    color: #f8f8f2;
+
+    &::placeholder {
+      color: #999;
+    }
+
+    &:focus {
+      border-color: #a59f85;
+      background-color: #2d2e2e;
+    }
+  }
+}
+
+.request-sender {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+
+  .query-params {
+    margin-bottom: 10px;
+
+
+
+
+
+    h4 {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9em;
+      margin: 5px 0;
+    }
+
+    .param-row {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 5px;
+
+      input {
+        flex: 1;
+        padding: 4px;
+        border: 1px solid;
+        border-radius: 3px;
+        font-family: 'Fira Code', monospace;
+      }
+
+      .remove-btn {
+        padding: 0 8px;
+        border: none;
+        border-radius: 3px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  .add-param-btn {
+    padding: 4px 8px;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Fira Code', monospace;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    margin: 0 0 10px 0;
+    font-family: 'Fira Code', monospace;
+    font-size: 1.1em;
+  }
+
+  .request-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    select, input {
+      padding: 5px;
+      border: 1px solid;
+      border-radius: 3px;
+      font-family: 'Fira Code', monospace;
+      transition: all 0.3s ease;
+    }
+
+    input {
+      flex: 1;
+    }
+
+    button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      font-family: 'Fira Code', monospace;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+    }
+  }
+
+  textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 3px;
+    font-family: 'Fira Code', monospace;
+    margin-bottom: 10px;
+    resize: vertical;
+    min-height: 80px;
+    transition: all 0.3s ease;
+  }
+
+  .response-preview {
+    margin-top: 10px;
+  }
+}
+
+// Toggle Button
+.tide-server-debug-toggle {
+  // Move declarations above nested rules
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+
+
+  @keyframes kaboom {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    20% {
+      transform: scale(2) rotate(10deg);
+      background: yellow;
+    }
+    40% {
+      transform: scale(3) rotate(-10deg);
+      background: red;
+    }
+    60% {
+      transform: scale(4) rotate(10deg);
+      background: yellow;
+    }
+    80% {
+      transform: scale(4) rotate(-10deg);
+      background: red;
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
+
+
+
+  &.kaboom {
+    animation: kaboom 0.5s ease-in-out;
+  }
+
+  &.theme-dark {
+    background: $purple;
+    color: $fg;
+
+    &:hover {
+      background: $teal;
+    }
+
+    &.error {
+      background: $red;
+
+      &:hover {
+      }
+    }
+  }
+
+  &.theme-monokai {
+    background: $monokai-purple;
+    color: $monokai-fg;
+
+    &:hover {
+      background: $monokai-teal;
+    }
+
+    &.error {
+      background: $monokai-red;
+
+      &:hover {
+      }
+    }
+  }
+
+  &.theme-normal {
+    background: $normal-purple;
+    color: white;
+
+    &:hover {
+      background: $normal-teal;
+    }
+
+    &.error {
+      background: $normal-red;
+
+      &:hover {
+      }
+    }
+  }
+}
+
+// Mixin for Dump Styles
+@mixin dump-styles($str-color, $key-color, $num-color, $note-color, $ref-color, $meta-color, $ellipsis-color, $toggle-color, $toggle-hover-color) {
+  .sf-dump-str {
+    color: $str-color;
+    font-weight: bold;
+  }
+  .sf-dump-key {
+    color: $key-color;
+  }
+  .sf-dump-num {
+    color: $num-color;
+    font-weight: bold;
+  }
+  .sf-dump-note {
+    color: $note-color;
+  }
+  .sf-dump-ref {
+    color: $ref-color;
+  }
+  .sf-dump-public, .sf-dump-protected, .sf-dump-private {
+    color: $fg;
+  }
+  .sf-dump-meta {
+    color: $meta-color;
+  }
+  .sf-dump-ellipsis {
+    color: $ellipsis-color;
+  }
+  .sf-dump-toggle {
+    color: $toggle-color;
+    cursor: pointer;
+
+    &:hover {
+      color: $toggle-hover-color;
+    }
+  }
+}
+
+// Debug Modal
+.tide-server-debug-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: slideIn 0.3s ease;
+  font-size: 13px;
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+
+  .modal-content {
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 90%;
+    width: 90%;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .theme-selector {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    label {
+      font-family: 'Fira Code', monospace;
+    }
+
+    select {
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-family: 'Fira Code', monospace;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid;
+    }
+  }
+
+  .search-bar {
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-family: 'Fira Code', monospace;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  .filter-buttons {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    font-size: 13px;
+
+    .filter-buttons-group {
+      padding: 3px;
+      background-color: rgba(128, 128, 128, 0.44);
+
+      .filter-btn {
+        margin-right: 5px;
+        padding: 6px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Fira Code', monospace;
+        transition: all 0.3s ease;
+        border: 1px solid;
+        white-space: nowrap;
+      }
+    }
+
+    .method-filters {
+      margin-bottom: 0;
+    }
+  }
+
+  .debug-columns {
+    display: flex;
+    gap: 10px;
+    max-height: 300px;
+    overflow: hidden;
+
+    .requests-column,
+    .terminal-column,
+    .request-sender {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        font-family: 'Fira Code', monospace;
+        margin-bottom: 10px;
+      }
+    }
+
+    .requests-container {
+      flex: 1;
+      overflow-y: auto;
+
+      .requests-table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th, td {
+          padding: 3px;
+          text-align: left;
+          border-bottom: 1px solid;
+        }
+
+        th {
+          position: sticky;
+          top: 0;
+          font-family: 'Fira Code', monospace;
+        }
+
+        tr:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .terminal-container {
+      flex: 1;
+      overflow-y: auto;
+      font-size: 11px;
+      line-height: 1;
+      padding: 6px 0;
+
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgba(30, 30, 50, 0.7);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, $teal, $green);
+        border-radius: 5px;
+        border: 2px solid $bg;
+      }
+
+      .log-line {
+        padding: 3px 10px;
+        margin: 1px 0;
+        font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        transition: background-color 0.15s ease;
+        font-size: 10px;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        &.error {
+          color: $red;
+          background-color: rgba($red, 0.1);
+        }
+
+        &.warning {
+          color: $yellow;
+          background-color: rgba($yellow, 0.1);
+        }
+
+        &.problem {
+          color: #ff9f43;
+          background-color: rgba(255, 159, 67, 0.1);
+        }
+
+        &.hmr {
+          color: $green;
+          background-color: rgba($green, 0.1);
+        }
+      }
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 15px;
+
+    .clear-btn, .close-btn, .export-btn {
+      margin-right: 10px;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Fira Code', monospace;
+      transition: background 0.3s ease;
+    }
+  }
+
+  &.theme-dark {
+    background: rgba(40, 42, 54, 0.9);
+
+    .request-sender {
+
+      h3 {
+        color: $purple;
+      }
+
+      .request-form {
+        select, input {
+          background: $gray;
+          color: $fg;
+          border-color: $highlight;
+
+          &:focus {
+            border-color: $teal;
+            outline: none;
+          }
+        }
+
+        button {
+          background: $purple;
+          color: $fg;
+
+          &:hover:not(:disabled) {
+            background: $teal;
+          }
+
+          &:disabled {
+            background: $gray;
+          }
+        }
+      }
+
+      textarea {
+        background: $gray;
+        color: $fg;
+        border-color: $highlight;
+
+        &:focus {
+          border-color: $teal;
+          outline: none;
+        }
+      }
+    }
+
+    .modal-content {
+      background: $bg;
+      color: $fg;
+      border: 1px solid $gray;
+    }
+
+    .theme-selector {
+      select {
+        background: $gray;
+        color: $fg;
+        border-color: $highlight;
+
+        &:hover {
+          background: $teal;
+          border-color: $teal;
+        }
+      }
+    }
+
+    .search-bar {
+      background: $gray;
+      border: 1px solid $highlight;
+      color: $fg;
+
+      &:focus {
+        border-color: $teal;
+      }
+    }
+
+    .filter-buttons {
+      .filter-buttons-group {
+        .filter-btn {
+          background: $gray;
+          color: $fg;
+          border-color: $highlight;
+
+          &:hover {
+            background: $teal;
+            border-color: $teal;
+          }
+
+          &.active {
+            background: $purple;
+            border-color: $purple;
+          }
+        }
+      }
+    }
+
+    .debug-columns {
+      &>div{
+        padding: 5px;
+        margin-bottom: 10px;
+        background-color: rgba(128, 128, 128, 0.15);
+      }
+      .requests-column, .terminal-column {
+        h3 {
+          color: $purple;
+        }
+      }
+
+      .requests-table {
+        th {
+          background: $highlight;
+          color: $fg;
+        }
+
+        td {
+          border-bottom-color: $gray;
+        }
+
+        tr:hover {
+          background: $highlight;
+        }
+
+        .status-200 {
+          background: rgba(80, 250, 123, 0.1);
+          color: $green;
+        }
+
+        .status-300 {
+          background: rgba(139, 233, 253, 0.1);
+          color: $teal;
+        }
+
+        .status-400 {
+          background: rgba(255, 85, 85, 0.1);
+          color: $red;
+        }
+
+        .status-500 {
+          background: rgba(255, 85, 85, 0.2);
+          color: $red;
+        }
+      }
+
+      .terminal-container {
+        background: #0f0f23;
+
+        .log-line {
+          &.error {
+            color: $red;
+            background-color: rgba($red, 0.1);
+          }
+
+          &.warning {
+            color: $yellow;
+            background-color: rgba($yellow, 0.1);
+          }
+
+          &.problem {
+            color: #ff9f43;
+            background-color: rgba(255, 159, 67, 0.1);
+          }
+
+          &.hmr {
+            color: $green;
+            background-color: rgba($green, 0.1);
+          }
+        }
+      }
+    }
+
+    .action-buttons {
+      .clear-btn, .close-btn, .export-btn {
+        background: $purple;
+        color: $fg;
+
+        &:hover {
+          background: $teal;
+        }
+      }
+    }
+  }
+
+  &.theme-monokai {
+    background: rgba($monokai-bg, 0.9);
+
+    .request-sender {
+
+      h3 {
+        color: $monokai-purple;
+      }
+
+      .request-form {
+        select, input {
+          background: $monokai-gray;
+          color: $monokai-fg;
+          border-color: $monokai-highlight;
+
+          &:focus {
+            border-color: $monokai-teal;
+            outline: none;
+          }
+        }
+
+        button {
+          background: $monokai-purple;
+          color: $monokai-fg;
+
+          &:hover:not(:disabled) {
+            background: $monokai-teal;
+          }
+
+          &:disabled {
+            background: $monokai-gray;
+          }
+        }
+      }
+
+      textarea {
+        background: $monokai-gray;
+        color: $monokai-fg;
+        border-color: $monokai-highlight;
+
+        &:focus {
+          border-color: $monokai-teal;
+          outline: none;
+        }
+      }
+    }
+
+    .modal-content {
+      background: $monokai-bg;
+      color: $monokai-fg;
+      border: 1px solid $monokai-gray;
+    }
+
+    .theme-selector {
+      select {
+        background: $monokai-gray;
+        color: $monokai-fg;
+        border-color: $monokai-highlight;
+
+        &:hover {
+          background: $monokai-teal;
+          border-color: $monokai-teal;
+        }
+      }
+    }
+
+    .search-bar {
+      background: $monokai-gray;
+      border: 1px solid $monokai-highlight;
+      color: $monokai-fg;
+
+      &:focus {
+        border-color: $monokai-teal;
+      }
+    }
+
+    .filter-buttons {
+      .filter-buttons-group {
+        .filter-btn {
+          background: $monokai-gray;
+          color: $monokai-fg;
+          border-color: $monokai-highlight;
+
+          &:hover {
+            background: $monokai-teal;
+            border-color: $monokai-teal;
+          }
+
+          &.active {
+            background: $monokai-purple;
+            border-color: $monokai-purple;
+          }
+        }
+      }
+    }
+
+    .debug-columns {
+      .requests-column, .terminal-column {
+        h3 {
+          color: $monokai-purple;
+        }
+      }
+
+      .requests-table {
+        th {
+          background: $monokai-highlight;
+          color: $monokai-fg;
+        }
+
+        td {
+          border-bottom-color: $monokai-gray;
+        }
+
+        tr:hover {
+          background: $monokai-highlight;
+        }
+
+        .status-200 {
+          background: rgba($monokai-green, 0.1);
+          color: $monokai-green;
+        }
+
+        .status-300 {
+          background: rgba($monokai-teal, 0.1);
+          color: $monokai-teal;
+        }
+
+        .status-400 {
+          background: rgba($monokai-red, 0.1);
+          color: $monokai-red;
+        }
+
+        .status-500 {
+          background: rgba($monokai-red, 0.2);
+          color: $monokai-red;
+        }
+      }
+
+      .terminal-container {
+
+        .log-line {
+          &.error {
+            color: $monokai-red;
+            background-color: rgba($monokai-red, 0.1);
+          }
+
+          &.warning {
+            color: $monokai-yellow;
+            background-color: rgba($monokai-yellow, 0.1);
+          }
+
+          &.problem {
+            color: #ff9f43;
+            background-color: rgba(255, 159, 67, 0.1);
+          }
+
+          &.hmr {
+            color: $monokai-green;
+            background-color: rgba($monokai-green, 0.1);
+          }
+        }
+      }
+    }
+
+    .action-buttons {
+      .clear-btn, .close-btn, .export-btn {
+        background: $monokai-purple;
+        color: $monokai-fg;
+
+        &:hover {
+          background: $monokai-teal;
+        }
+      }
+    }
+  }
+
+  &.theme-normal {
+    background: rgba($normal-gray, 0.9);
+
+    .request-sender {
+
+      h3 {
+        color: $normal-purple;
+      }
+
+      .request-form {
+        select, input {
+          background: $normal-gray;
+          color: $normal-fg;
+          border-color: $normal-highlight;
+
+          &:focus {
+            border-color: $normal-teal;
+            outline: none;
+          }
+        }
+
+        button {
+          background: $normal-purple;
+          color: white;
+
+          &:hover:not(:disabled) {
+            background: $normal-teal;
+          }
+
+          &:disabled {
+            background: $normal-gray;
+            color: $normal-fg;
+          }
+        }
+      }
+
+      textarea {
+        background: $normal-gray;
+        color: $normal-fg;
+        border-color: $normal-highlight;
+
+        &:focus {
+          border-color: $normal-teal;
+          outline: none;
+        }
+      }
+    }
+
+    .modal-content {
+      background: $normal-bg;
+      color: $normal-fg;
+      border: 1px solid $normal-gray;
+    }
+
+    .theme-selector {
+      select {
+        background: $normal-gray;
+        color: $normal-fg;
+        border-color: $normal-highlight;
+
+        &:hover {
+          background: $normal-teal;
+          border-color: $normal-teal;
+        }
+      }
+    }
+
+    .search-bar {
+      background: $normal-gray;
+      border: 1px solid $normal-highlight;
+      color: $normal-fg;
+
+      &:focus {
+        border-color: $normal-teal;
+      }
+    }
+
+    .filter-buttons {
+      .filter-buttons-group {
+        .filter-btn {
+          background: $normal-gray;
+          color: $normal-fg;
+          border-color: $normal-highlight;
+
+          &:hover {
+            background: $normal-teal;
+            border-color: $normal-teal;
+          }
+
+          &.active {
+            background: $normal-purple;
+            border-color: $normal-purple;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .debug-columns {
+      .requests-column, .terminal-column {
+        h3 {
+          color: $normal-purple;
+        }
+      }
+
+      .requests-table {
+        th {
+          background: $normal-highlight;
+          color: $normal-fg;
+        }
+
+        td {
+          border-bottom-color: $normal-gray;
+        }
+
+        tr:hover {
+          background: $normal-highlight;
+        }
+
+        .status-200 {
+          background: rgba($normal-green, 0.1);
+          color: $normal-green;
+        }
+
+        .status-300 {
+          background: rgba($normal-teal, 0.1);
+          color: $normal-teal;
+        }
+
+        .status-400 {
+          background: rgba($normal-red, 0.1);
+          color: $normal-red;
+        }
+
+        .status-500 {
+          background: rgba($normal-red, 0.2);
+          color: $normal-red;
+        }
+      }
+
+      .terminal-container {
+
+        .log-line {
+          &.error {
+            color: $normal-red;
+            background-color: rgba($normal-red, 0.1);
+          }
+
+          &.warning {
+            color: $normal-yellow;
+            background-color: rgba($normal-yellow, 0.1);
+          }
+
+          &.problem {
+            color: #ff9f43;
+            background-color: rgba(255, 159, 67, 0.1);
+          }
+
+          &.hmr {
+            color: $normal-green;
+            background-color: rgba($normal-green, 0.1);
+          }
+        }
+      }
+    }
+
+    .action-buttons {
+      .clear-btn, .close-btn, .export-btn {
+        background: $normal-purple;
+        color: white;
+
+        &:hover {
+          background: $normal-teal;
+        }
+      }
+    }
+  }
+}
+
+// Details Modal
+.tide-server-details-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: slideIn 0.3s ease;
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+
+  &.full-page {
+    .modal-content {
+      padding: 20px;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .tide-server-modal-title {
+    font-family: 'Fira Code', monospace;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .details-content {
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    overflow: hidden;
+
+    .meta-info {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 10px;
+      word-break: break-word;
+
+      p {
+        margin: 8px 0;
+        font-family: 'Fira Code', monospace;
+
+        strong {
+          color: inherit;
+        }
+      }
+
+      .dump-item {
+        margin-bottom: 15px;
+
+        p {
+          font-size: 12px;
+        }
+
+        .sf-dump-container {
+          padding: 10px;
+          border-radius: 5px;
+          font-family: 'Fira Code', monospace;
+          font-size: 12px;
+          line-height: 1.4em;
+          word-wrap: break-word;
+          white-space: pre-wrap;
+          overflow-x: auto;
+          border: 1px solid;
+        }
+      }
+    }
+
+    .profiler-iframe {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      h4 {
+        font-family: 'Fira Code', monospace;
+        margin-bottom: 10px;
+      }
+
+      iframe {
+        flex: 1;
+        border-radius: 5px;
+        border: 1px solid;
+      }
+    }
+  }
+
+  .close-btn, .curl-btn, .replay-btn {
+    margin-right: 10px;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Fira Code', monospace;
+    transition: background 0.3s ease;
+  }
+
+  &.theme-dark {
+    background: rgba(40, 42, 54, 0.95);
+
+    .modal-content {
+      background: $bg;
+      color: $fg;
+    }
+
+    .tide-server-modal-title {
+      color: $purple;
+    }
+
+    .meta-info {
+      p strong {
+        color: $teal;
+      }
+
+      .dump-item {
+        p {
+          color: $fg;
+
+          strong {
+            color: $purple;
+          }
+        }
+
+        .sf-dump-container {
+          background: $bg;
+          color: $fg;
+          border-color: $gray;
+          @include dump-styles($green, $teal, $purple, $highlight, $gray, $purple, $red, $teal, $purple);
+        }
+      }
+    }
+
+    .profiler-iframe {
+      h4 {
+        color: $purple;
+      }
+
+      iframe {
+        background: $gray;
+        border-color: $highlight;
+      }
+    }
+
+    .close-btn, .curl-btn, .replay-btn {
+      background: $purple;
+      color: $fg;
+
+      &:hover {
+        background: $teal;
+      }
+    }
+  }
+
+  &.theme-monokai {
+    background: rgba($monokai-bg, 0.95);
+
+    .modal-content {
+      background: $monokai-bg;
+      color: $monokai-fg;
+    }
+
+    .tide-server-modal-title {
+      color: $monokai-purple;
+    }
+
+    .meta-info {
+      p strong {
+        color: $monokai-teal;
+      }
+
+      .dump-item {
+        p {
+          color: $monokai-fg;
+
+          strong {
+            color: $monokai-purple;
+          }
+        }
+
+        .sf-dump-container {
+          background: $monokai-bg;
+          color: $monokai-fg;
+          border-color: $monokai-gray;
+          @include dump-styles($monokai-green, $monokai-teal, $monokai-purple, $monokai-highlight, $monokai-gray, $monokai-purple, $monokai-red, $monokai-teal, $monokai-purple);
+        }
+      }
+    }
+
+    .profiler-iframe {
+      h4 {
+        color: $monokai-purple;
+      }
+
+      iframe {
+        background: $monokai-gray;
+        border-color: $monokai-highlight;
+      }
+    }
+
+    .close-btn, .curl-btn, .replay-btn {
+      background: $monokai-purple;
+      color: $monokai-fg;
+
+      &:hover {
+        background: $monokai-teal;
+      }
+    }
+  }
+
+
+  &.theme-normal {
+    background: rgba($normal-gray, 0.95);
+
+    .modal-content {
+      background: $normal-bg;
+      color: $normal-fg;
+    }
+
+    .tide-server-modal-title {
+      color: $normal-purple;
+    }
+    .meta-info {
+      p strong {
+        color: $normal-teal;
+      }
+
+      .dump-item {
+        p {
+          color: $normal-fg;
+
+          strong {
+            color: $normal-purple;
+          }
+        }
+
+        .sf-dump-container {
+          background: $normal-bg;
+          color: $normal-fg;
+          border-color: $normal-gray;
+          @include dump-styles($normal-green, $normal-teal, $normal-purple, $normal-highlight, $normal-gray, $normal-purple, $normal-red, $normal-teal, $normal-purple);
+        }
+      }
+    }
+
+    .profiler-iframe {
+      h4 {
+        color: $normal-purple;
+      }
+
+      iframe {
+        background: $normal-gray;
+        border-color: $normal-highlight;
+      }
+    }
+
+    .close-btn, .curl-btn, .replay-btn {
+      background: $normal-purple;
+      color: white;
+
+      &:hover {
+        background: $normal-teal;
+      }
+    }
+  }
+}
+
+// Replay Modal
+.replay-modal {
+  z-index: 1111;
+  position: fixed;
+  width: 100%;
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .modal-content {
+    padding: 20px;
+    border-radius: 8px;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .tide-server-modal-title {
+    font-family: 'Fira Code', monospace;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .replay-error {
+    p {
+      margin: 8px 0;
+      font-family: 'Fira Code', monospace;
+
+      strong {
+        color: inherit;
+      }
+    }
+  }
+
+  .close-btn {
+    margin-right: 10px;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Fira Code', monospace;
+    transition: background 0.3s ease;
+  }
+
+  &.theme-dark {
+    background: rgba(40, 42, 54, 0.9);
+
+    .modal-content {
+      background: $bg;
+      color: $fg;
+      border: 1px solid $gray;
+    }
+
+    .tide-server-modal-title {
+      color: $purple;
+    }
+
+    .replay-error {
+      p {
+        color: $red;
+
+        strong {
+          color: $teal;
+        }
+      }
+    }
+
+    .close-btn {
+      background: $purple;
+      color: $fg;
+
+      &:hover {
+        background: $teal;
+      }
+    }
+  }
+
+  &.theme-monokai {
+    background: rgba($monokai-bg, 0.9);
+
+    .modal-content {
+      background: $monokai-bg;
+      color: $monokai-fg;
+      border: 1px solid $monokai-gray;
+    }
+
+    .tide-server-modal-title {
+      color: $monokai-purple;
+    }
+
+    .replay-error {
+      p {
+        color: $monokai-red;
+
+        strong {
+          color: $monokai-teal;
+        }
+      }
+    }
+
+    .close-btn {
+      background: $monokai-purple;
+      color: $monokai-fg;
+
+      &:hover {
+        background: $monokai-teal;
+      }
+    }
+  }
+
+  &.theme-normal {
+    background: rgba($normal-gray, 0.9);
+
+    .modal-content {
+      background: $normal-bg;
+      color: $normal-fg;
+      border: 1px solid $normal-gray;
+    }
+
+    .tide-server-modal-title {
+      color: $normal-purple;
+    }
+
+    .replay-error {
+      p {
+        color: $normal-red;
+
+        strong {
+          color: $normal-teal;
+        }
+      }
+    }
+
+    .close-btn {
+      background: $normal-purple;
+      color: white;
+
+      &:hover {
+        background: $normal-teal;
+      }
+    }
+  }
+}
+
+// ANSI color classes for terminal logs
+.ansi-bold {
+  font-weight: bold;
+}
+
+.ansi-dim {
+  opacity: 0.7;
+}
+
+.ansi-italic {
+  font-style: italic;
+}
+
+.ansi-underline {
+  text-decoration: underline;
+}
+
+.ansi-normal-weight {
+  font-weight: normal;
+}
+
+.ansi-reset {
+  color: inherit;
+  background-color: transparent;
+  font-weight: normal;
+}
+
+.ansi-black {
+  color: #2e3436;
+}
+
+.ansi-red {
+  color: #cc0000;
+}
+
+.ansi-green {
+  color: #4e9a06;
+}
+
+.ansi-yellow {
+  color: #c4a000;
+}
+
+.ansi-blue {
+  color: #3465a4;
+}
+
+.ansi-magenta {
+  color: #75507b;
+}
+
+.ansi-cyan {
+  color: #06989a;
+}
+
+.ansi-white {
+  color: #d3d7cf;
+}
+
+.ansi-default-color {
+  color: inherit;
+}
+
+.ansi-bright-black {
+  color: #555753;
+}
+
+.ansi-bright-red {
+  color: #ef2929;
+}
+
+.ansi-bright-green {
+  color: #8ae234;
+}
+
+.ansi-bright-yellow {
+  color: #fce94f;
+}
+
+.ansi-bright-blue {
+  color: #729fcf;
+}
+
+.ansi-bright-magenta {
+  color: #ad7fa8;
+}
+
+.ansi-bright-cyan {
+  color: #34e2e2;
+}
+
+.ansi-bright-white {
+  color: #eeeeec;
+}
+
+.ansi-bg-black {
+  background-color: #2e3436;
+}
+
+.ansi-bg-red {
+  background-color: #cc0000;
+}
+
+.ansi-bg-green {
+  background-color: #4e9a06;
+}
+
+.ansi-bg-yellow {
+  background-color: #c4a000;
+}
+
+.ansi-bg-blue {
+  background-color: #3465a4;
+}
+
+.ansi-bg-magenta {
+  background-color: #75507b;
+}
+
+.ansi-bg-cyan {
+  background-color: #06989a;
+}
+
+.ansi-bg-white {
+  background-color: #d3d7cf;
+}
+
+.ansi-default-bg {
+  background-color: transparent;
+}
