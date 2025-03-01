@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import TideDebugModal from "./components/TideDebugModal/TideDebugModal";
 
 function App() {
