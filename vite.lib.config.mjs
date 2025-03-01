@@ -1,4 +1,5 @@
-import {defineConfig} from 'vite';
+// vite.lib.config.mjs
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
@@ -6,20 +7,33 @@ export default defineConfig({
     plugins: [react()],
     build: {
         lib: {
-            entry: path.resolve(__dirname, 'src/components/TideDebugModal/TideDebugModal.jsx'),
-            name: 'ReactDevDebugModal',
+            entry: path.resolve(__dirname, 'src/index.js'),
+            name: 'TideDebugModal',
             fileName: (format) => `index.${format === 'es' ? 'esm' : format}.js`,
+            formats: ['es', 'umd'],
         },
         rollupOptions: {
-            external: ['react', 'react-dom', 'react-json-view', 'ws'], // Exclude ws from the bundle
+            // Externalize all React-related modules
+            external: [
+                'react',
+                'react-dom',
+                'react-json-view',
+                'react/jsx-runtime',
+                'react/jsx-dev-runtime',
+            ],
             output: {
                 globals: {
                     react: 'React',
                     'react-dom': 'ReactDOM',
                     'react-json-view': 'ReactJson',
-                    'ws': 'WebSocketServer', // Not needed at runtime, but included for completeness
+                    'react/jsx-runtime': 'ReactJSXRuntime',
                 },
             },
         },
+        sourcemap: true,
+        minify: false,
+    },
+    resolve: {
+        dedupe: ['react', 'react-dom', 'react/jsx-runtime'],
     },
 });
